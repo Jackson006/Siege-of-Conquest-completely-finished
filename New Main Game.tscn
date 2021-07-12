@@ -1,0 +1,194 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://MainGame.gd" type="Script" id=1]
+[ext_resource path="res://Old scripts/ButtonsScript.gd" type="Script" id=2]
+[ext_resource path="res://New font/GentiumBookBasic-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Images/9b4f1be87dc343d47bead779a21f418d.png" type="Texture" id=4]
+[ext_resource path="res://new scripts/Adventurer.gd" type="Script" id=5]
+[ext_resource path="res://new scripts/Adventurer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Goblin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Goblins.gd" type="Script" id=8]
+[ext_resource path="res://Music/11 - Battle.wav" type="AudioStream" id=9]
+[ext_resource path="res://Hostage.gd" type="Script" id=10]
+[ext_resource path="res://Goblin brutus.gd" type="Script" id=11]
+[ext_resource path="res://Hostages.gd" type="Script" id=12]
+[ext_resource path="res://Hostage.tscn" type="PackedScene" id=13]
+
+[sub_resource type="DynamicFont" id=6]
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 1235.05 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 1239.85 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 958.431, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 991.561, 10 )
+
+[node name="New Main Game" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Countdown" type="Label" parent="."]
+margin_left = -5.30005
+margin_top = 26.5004
+margin_right = 154.7
+margin_bottom = 45.5004
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_top = -140.452
+margin_right = 1920.0
+margin_bottom = 1059.55
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReturnNewMainMenu" type="Button" parent="HUD"]
+margin_right = 160.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Return to Main Menu"
+flat = true
+script = ExtResource( 2 )
+scene_to_load = "New_Main_Menu.tscn"
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Adventurer" parent="World" instance=ExtResource( 6 )]
+position = Vector2( 967.262, 919.558 )
+script = ExtResource( 5 )
+
+[node name="BorderLeft" type="Area2D" parent="." groups=[
+"left",
+]]
+position = Vector2( -3.84851, 514.119 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderLeft"]
+shape = SubResource( 2 )
+
+[node name="BorderRight" type="Area2D" parent="." groups=[
+"right",
+]]
+position = Vector2( 1922.89, 516.597 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderRight"]
+position = Vector2( -4.7832, 16.7416 )
+shape = SubResource( 3 )
+
+[node name="BorderBottom" type="Area2D" parent="." groups=[
+"bottom",
+]]
+position = Vector2( 965.192, 811.367 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderBottom"]
+shape = SubResource( 5 )
+
+[node name="BorderTop" type="KinematicBody2D" parent="."]
+position = Vector2( 954.269, -28.6998 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderTop" groups=[
+"top",
+]]
+shape = SubResource( 4 )
+
+[node name="Goblins" type="Node2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="Goblin" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 772.247, 97.2761 )
+
+[node name="Goblin2" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 899.004, 94.8844 )
+
+[node name="Goblin3" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 643.097, 97.276 )
+
+[node name="Goblin4" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 516.34, 99.6677 )
+
+[node name="Goblin5" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 1154.91, 92.4927 )
+
+[node name="Goblin6" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 1028.15, 94.8844 )
+
+[node name="Goblin7" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 1410.82, 90.1011 )
+
+[node name="Goblin8" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 1284.06, 92.4927 )
+
+[node name="Goblin9" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 1029.3, 261.578 )
+
+[node name="Goblin10" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 899.448, 261.578 )
+
+[node name="Goblin11" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 1153.85, 261.578 )
+
+[node name="Goblin12" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 1283.7, 261.578 )
+
+[node name="Goblin13" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 1405.6, 258.928 )
+
+[node name="Goblin14" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 642.395, 264.228 )
+
+[node name="Goblin15" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 772.247, 264.228 )
+
+[node name="Goblin16" parent="Goblins" instance=ExtResource( 7 )]
+position = Vector2( 520.494, 264.228 )
+
+[node name="Goblin Brute" type="Node2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="Hostages" type="Node2D" parent="."]
+script = ExtResource( 12 )
+
+[node name="Hostage" parent="Hostages" instance=ExtResource( 13 )]
+position = Vector2( 712.858, 442.555 )
+script = ExtResource( 10 )
+
+[node name="Hostage2" parent="Hostages" instance=ExtResource( 13 )]
+position = Vector2( 967.261, 445.205 )
+script = ExtResource( 10 )
+
+[node name="Hostage3" parent="Hostages" instance=ExtResource( 13 )]
+position = Vector2( 1213.71, 439.905 )
+script = ExtResource( 10 )
