@@ -183,7 +183,7 @@ text = "V.01"
 
 [node name="Developer" type="Label" parent="Menu/App Info"]
 margin_left = 533.0
-margin_right = 1062.0
+margin_right = 1063.0
 margin_bottom = 76.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 7 )
@@ -192,8 +192,8 @@ custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Jackson.D"
 
 [node name="Highscore label" type="Label" parent="Menu/App Info"]
-margin_left = 1066.0
-margin_right = 1358.0
+margin_left = 1067.0
+margin_right = 1359.0
 margin_bottom = 76.0
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -201,8 +201,8 @@ custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Highscore:"
 
 [node name="Highscore" type="Label" parent="Menu/App Info"]
-margin_left = 1362.0
-margin_right = 1486.0
+margin_left = 1363.0
+margin_right = 1487.0
 margin_bottom = 76.0
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
